@@ -1,6 +1,6 @@
 # Instruções para inicializar o webserver na placa Intel Galileo Gen2
 
-### Para a configuração da placa Intel Galileo Gen2:
+## Para a configuração da placa Intel Galileo Gen2:
 
 As especificações da placa podem ser encontradas [aqui](https://ark.intel.com/pt-br/products/83137/Intel-Galileo-Gen-2-Board).
 
@@ -11,13 +11,21 @@ Após ter feito isto, conecta o cabo de energia na placa. Ao mesmo tempo, conect
 
 ![Alt text](../readme_img/img1.jpg?raw=true "Optional Title")
 
+##### Configurando para DHCP
 O sistema operacional Linux Yocto que vem no cartão micro SD tem como default funcionando com DHCP, por isso provavelmente se olharmos na página de configuração do roteador vamos encontrar um dispositivo chamado galileo com o seu respectivo endereço ip. Guarde esse endereço ip, podemos acessar remotamente a placa com o comando shell:
-ssh <usuário>@<endereço ip>, a placa já vem com o usuário ‘root’ como default. A porta default de telnet/SSH é 22, se configuramos esta porta para outro número precisamos adicionar argumento -p <numero de porta>.
 
+`ssh <usuário>@<endereço ip>`
+
+A placa já vem com o usuário ‘root’ como default. A porta default de telnet/SSH é 22, se configuramos esta porta para outro número precisamos adicionar argumento -p <numero de porta> para especificar a porta.
+
+##### Configuração de IP estático (recomendado)
 Se o sistema não vier com DHCP configurado, podemos configurar ip estática. Para isso precisamos conectar um cabo USB para microUSB na placa e no computador pessoal. Precisamos baixar o IDE do arduino:
 https://www.arduino.cc/en/Main/Software
+
 Depois da instalação
 Abre o IDE, entra menu tools->board->board manager, instale o suporte para seguinte placa:
+
+![Alt text](../readme_img/img2.png?raw=true "Optional Title")
 
 Após ter feito isso, vamos selecionar no menu tools->board-> Intel Galileo Gen 2
 Seleciona também a porta usb que está conectado com a placa:
