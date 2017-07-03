@@ -9,6 +9,7 @@ Primeiro precisamos bootar o sistema com cartão micro SD. Segue as [instruçõe
 ### Acessar a placa via SSH
 Após ter feito isto, conecta o cabo de energia na placa. Ao mesmo tempo, conecta a porta de ethernet do roteador de casa com a porta de ethernet da placa como mostrado na figura abaixo:
 
+![Alt text](../readme_img/img1.jpg?raw=true "Optional Title")
 
 O sistema operacional Linux Yocto que vem no cartão micro SD tem como default funcionando com DHCP, por isso provavelmente se olharmos na página de configuração do roteador vamos encontrar um dispositivo chamado galileo com o seu respectivo endereço ip. Guarde esse endereço ip, podemos acessar remotamente a placa com o comando shell:
 ssh <usuário>@<endereço ip>, a placa já vem com o usuário ‘root’ como default. A porta default de telnet/SSH é 22, se configuramos esta porta para outro número precisamos adicionar argumento -p <numero de porta>.
